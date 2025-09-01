@@ -16,7 +16,11 @@ namespace ProcessingModule
         /// <returns>The value in engineering units.</returns>
 		public double ConvertToEGU(double scalingFactor, double deviation, ushort rawValue)
 		{
-            return rawValue;
+            // A * raw_value + B  
+            // A - faktor skaliranja
+            // B - odstupanje
+            double val = scalingFactor * rawValue + deviation;
+            return val;
 		}
 
         /// <summary>
@@ -28,7 +32,8 @@ namespace ProcessingModule
         /// <returns>The raw value.</returns>
 		public ushort ConvertToRaw(double scalingFactor, double deviation, double eguValue)
         {
-            return (ushort)eguValue;
+            double val = (eguValue - deviation) / scalingFactor;
+            return (ushort)val;
 		}
 	}
 }

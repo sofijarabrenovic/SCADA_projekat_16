@@ -301,7 +301,7 @@ namespace dCom.Configuration
             else
             {
                 Double.TryParse(configurationParameters[10], out doubleTemp);
-                ScaleFactor = temp;
+                ScaleFactor = doubleTemp;
             }
             if (configurationParameters[11].Equals("#"))
             {
@@ -310,7 +310,7 @@ namespace dCom.Configuration
             else
             {
                 Double.TryParse(configurationParameters[11], out doubleTemp);
-                Deviation = temp;
+                Deviation = doubleTemp;
             }
             if (configurationParameters[12].Equals("#"))
             {
@@ -319,7 +319,7 @@ namespace dCom.Configuration
             else
             {
                 Double.TryParse(configurationParameters[12], out doubleTemp);
-                EGU_Max = temp;
+                EGU_Max = doubleTemp;
             }
             if (configurationParameters[13].Equals("#"))
             {
@@ -328,7 +328,7 @@ namespace dCom.Configuration
             else
             {
                 Double.TryParse(configurationParameters[13], out doubleTemp);
-                EGU_Min = temp;
+                EGU_Min = doubleTemp;
             }
             if (configurationParameters[14].Equals("#"))
             {
@@ -346,7 +346,7 @@ namespace dCom.Configuration
             else
             {
                 Double.TryParse(configurationParameters[15], out doubleTemp);
-                HighLimit = temp;
+                HighLimit = doubleTemp;
             }
             if (configurationParameters[16].Equals("#"))
             {
@@ -355,7 +355,7 @@ namespace dCom.Configuration
             else
             {
                 Double.TryParse(configurationParameters[16], out doubleTemp);
-                LowLimit = temp;
+                LowLimit = doubleTemp;
             }
         }
 
