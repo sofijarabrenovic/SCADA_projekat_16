@@ -6,3 +6,12 @@ C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Modbus.dl
 C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Common.pdb
 C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
 C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\bin\Debug\ProcessingModule.dll
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\bin\Debug\ProcessingModule.pdb
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\bin\Debug\Common.dll
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\bin\Debug\Common.pdb
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\obj\Debug\Processi.B4D6C848.Up2Date
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
+C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb
