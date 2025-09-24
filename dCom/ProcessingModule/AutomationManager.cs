@@ -1,5 +1,6 @@
 ﻿using Common;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace ProcessingModule
@@ -29,6 +30,7 @@ namespace ProcessingModule
 			this.processingManager = processingManager;
             this.configuration = configuration;
             this.automationTrigger = automationTrigger;
+            this.delayBetweenCommands = configuration.DelayBetweenCommands;
         }
 
         /// <summary>
@@ -60,10 +62,58 @@ namespace ProcessingModule
 
 		private void AutomationWorker_DoWork()
 		{
-			//while (!disposedValue)
-			//{
-			//}
-		}
+			EGUConverter eguConverter = new EGUConverter();
+			PointIdentifier analogOut = new PointIdentifier(PointType.ANALOG_OUTPUT, 1000); //pozicija kapije
+			PointIdentifier digitalOut1 = new PointIdentifier(PointType.DIGITAL_OUTPUT, 3000); //open
+			PointIdentifier digitalOut2 = new PointIdentifier(PointType.DIGITAL_OUTPUT, 3001); //close
+
+			List<PointIdentifier> pointList = new List<PointIdentifier> { analogOut, digitalOut1, digitalOut2};
+
+			
+			while(!disposedValue)
+			{
+				List<IPoint> points = storage.GetPoints(pointList);
+				int initValue = (int)eguConverter.ConvertToEGU(points[0].ConfigItem.ScaleFactor, points[0].ConfigItem.Deviation, points[0].RawValue);
+				int value = initValue;
+
+				if (points[1].RawValue == 1)
+				{
+					value += 10;
+                    
+                }
+                if (points[2].RawValue == 1)
+                {
+                    value -= 10;
+                    
+                }
+
+				if(value != initValue)
+				{
+					value = (int)eguConverter.ConvertToRaw(points[0].ConfigItem.ScaleFactor, points[0].ConfigItem.Deviation, value);
+					processingManager.ExecuteWriteCommand(points[0].ConfigItem, configuration.GetTransactionId(), configuration.UnitAddress, 1000, value);
+				}
+
+				//analg-dig
+				if(value > points[0].ConfigItem.HighLimit)
+				{
+					if (points[0].RawValue != 0)
+					processingManager.ExecuteWriteCommand(points[2].ConfigItem, configuration.GetTransactionId(), configuration.UnitAddress, 3001, 0);
+                    if (points[0].RawValue != 1)
+                        processingManager.ExecuteWriteCommand(points[2].ConfigItem, configuration.GetTransactionId(), configuration.UnitAddress, 3001, 1);
+                }
+                if (value < points[0].ConfigItem.LowLimit)
+                {
+					if (points[0].RawValue != 0)
+                    processingManager.ExecuteWriteCommand(points[1].ConfigItem, configuration.GetTransactionId(), configuration.UnitAddress, 3000, 0);
+                    if (points[0].RawValue != 1)
+                        processingManager.ExecuteWriteCommand(points[1].ConfigItem, configuration.GetTransactionId(), configuration.UnitAddress, 3000, 1);
+                }
+
+                for (int i = 0; i < delayBetweenCommands; i += 1000)
+                    automationTrigger.WaitOne();
+
+            }
+        }
 
 		#region IDisposable Support
 		private bool disposedValue = false; // To detect redundant calls

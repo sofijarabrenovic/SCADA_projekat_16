@@ -9,3 +9,9 @@ C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.cs
 C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.dll
 C:\Users\Acer\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.pdb
+C:\Users\bminj\OneDrive\Documents\GitHub\SCADA_projekat_16\dCom\Common\bin\Debug\Common.dll
+C:\Users\bminj\OneDrive\Documents\GitHub\SCADA_projekat_16\dCom\Common\bin\Debug\Common.pdb
+C:\Users\bminj\OneDrive\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\bminj\OneDrive\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\bminj\OneDrive\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.dll
+C:\Users\bminj\OneDrive\Documents\GitHub\SCADA_projekat_16\dCom\Common\obj\Debug\Common.pdb
